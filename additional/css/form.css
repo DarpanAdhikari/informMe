@@ -1,0 +1,351 @@
+/* default css */
+.form-group input,
+.form-group textarea,
+.form-group select{
+  position: relative;
+  transition: .5s linear;
+}
+.form-group input:invalid,
+.form-group textarea:invalid,
+.form-group select:invalid{
+  border: 3px solid red;
+}
+.form-group input:valid,
+.form-group textarea:valid,
+.form-group select:valid{
+  border: 3px solid green;
+}
+.form-group textarea:not(#textarea){
+  resize: none;
+}
+/* css individually by tag */
+body{
+  padding-top: 15px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.additional-input:nth-child(2) {
+  width: 400px;
+  height: max-content;
+  padding: 20px 25px;
+  border-radius: 11.5px;
+  border: 8px solid #223243;
+  background: rgba(34, 50, 67,.9);
+  box-shadow: -5px -5px 15px rgba(255, 255, 255,.1),
+  5px 5px 15px rgba(0, 0, 0,.35),
+  inset -5px -5px 15px rgba(255, 255, 255,.1),
+  inset 5px 5px 15px rgba(0, 0, 0,.35);
+}
+
+.container .additional-input:nth-child(2) .imgLinks .select img {
+  cursor: pointer;
+  width: 95px;
+  height: 70px;
+  box-shadow: 0 0 10px #000;
+  border: 3px solid #ccc;
+}
+.container .additional-input:nth-child(2) .imgLinks .select img:hover{
+  transform: scale(1.09);
+}
+.additional-input:nth-child(2) .imgLinks .select {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  gap: 10px;
+}
+
+
+.container p,h1,h2,h3,h4{
+  color: #000;
+}
+.container form{
+  width: 700px;
+  min-width: 320px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.container h2{
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #1e6c7b;
+  text-decoration: underline;
+}
+.container picture{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container picture img{
+  box-shadow: 1px 1px 4px #000;
+  border-radius: 12.5px;
+  margin-bottom: 10px;
+  width: max-content;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  user-select: none;
+}
+.form-group label i{
+  color: #2d3e28;
+  font-size: 25px;
+  margin-left: 10px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #ccc;
+  border-radius: 7.5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.form-group textarea{
+  resize: vertical;
+}
+.form-group textarea#textarea{
+  resize: both;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.form-group select option{
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.form-group button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.form-group textarea::-webkit-scrollbar{
+  display: none;
+}
+.form-group input[type="submit"]{
+  cursor: pointer;
+}
+picture.form-group button{
+  position: absolute;
+  left: 40%;
+  bottom: 0;
+  box-shadow: 1px 1px 4px #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  z-index: 1;
+}
+.submission input{
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #f3f3f3;
+  border: none;
+}
+.submission.float{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.submission.float input{
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  width: 200px;
+  box-shadow: 0 0 50px #36b4c4;
+}
+/* image select */
+.images-holder {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+}
+.images-holder.active{
+  display: flex;
+}
+.images-holder .images-container{
+ max-width: 800px;
+ height: 500px;
+ border-radius: 7.5px;
+ border: 8px solid #223243;
+ background: rgba(255, 255, 255);
+ box-shadow: -5px -5px 15px rgba(255, 255, 255,.1),
+ 5px 5px 15px rgba(0, 0, 0,.35),
+ inset -5px -5px 15px rgba(255, 255, 255,.1),
+ inset 5px 5px 15px rgba(0, 0, 0,.35);
+ display: flex;
+ gap: 10px;
+ animation: slideBottom 1s linear;
+}
+@keyframes slideBottom {
+  from{
+    transform: translateY(-150%) scale(0.3);
+  }
+  to{
+    transform: translateY(0) scale(1);
+  }
+}
+.images-container .image-drop{
+  width: 300px;
+  height: 100%;
+  border-right: 3px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.images-container .image-drop .drop-here{
+  height: 90%;
+  width: 250px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+  border-radius: 5.3px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #444;
+  border: 3px dashed #222;
+}
+.image-drop .drop-here.dragover {
+  border-style: solid;
+  box-shadow: 0 0 30px #f3f3f3;
+}
+.images-container .image-drop button{
+  width: 100%;
+  padding: 7px;
+  font-size: 18px;
+  font-weight: 900;
+  margin-top: 5px;
+  border-radius: 4.4px;
+  box-shadow: 0 0 50px #222;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .5s linear;
+}
+.images-container .image-drop button:hover{
+  background: #157425;
+  color: #fff;
+}
+.images-container .uploaded-images .images{
+  width: 100%;
+  height: 90%;
+  padding: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.images-container .uploaded-images .images::-webkit-scrollbar{
+  display: none;
+}
+.images-container .uploaded-images .images img{
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border: 5px solid #777;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.images-container .uploaded-images .images img:hover,
+.images-container .uploaded-images .images img.active{
+  box-shadow: 0 0 10px green, 0 0 10px green;
+  border: 1px solid green;
+  border: none;
+}
+.images-container .uploaded-images .buttons{
+  float: right;
+  margin-right: 20px;
+  width: max-content;
+}
+.images-container .uploaded-images .buttons button{
+  padding: 5px;
+  font-size: 18px;                        
+  font-weight: 800;
+  border: none;
+  outline: none;
+  border-radius: 5.5px;
+  box-shadow: 0 0 10px #000;
+  cursor: pointer;
+}
+.images-container .uploaded-images .buttons button:first-child{
+  background: #3608db;
+  color: #fff;
+}
+.images-container .uploaded-images .buttons button:last-child{
+  background: rgb(99, 15, 15);
+  color: #fff;
+}
+.imgLinks .feature-image{
+  width: 100%;
+  padding: 10px;
+}
+.imgLinks .feature-image h3{
+  text-shadow: 0 0 20px #ccc;
+  color: #f3f3f3;
+}
+.feature-image picture{
+  width: 100%;
+}
+.feature-image picture img{
+  margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width:800px) {
+  .container{
+    padding: 20px;
+  }
+  .additional-input:nth-child(2) {
+    width: 90%;
+  }
+}

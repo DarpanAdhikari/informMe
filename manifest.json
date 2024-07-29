@@ -1,0 +1,20 @@
+{
+  "name": "InformMe",
+  "short_name": "InformMe",
+  "start_url": "./",
+  "background_color": "#fb4b77",
+  "theme_color": "#124352",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "additional/addition/logo192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "additional/addition/logo512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

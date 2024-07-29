@@ -1,0 +1,569 @@
+body.dark-mode article,
+body.dark-mode .otherSources{
+  background: rgb(181, 176, 176,.9);
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+main {
+  margin-top: 10px;
+  width: 100%;
+	padding: 20px;
+	display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+article {
+	background-color: #fff;
+	padding:20px 40px;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  position: relative;
+  max-width: 1100px;
+}
+article h2 {
+	font-size: 32px;
+  width: 100%;
+  line-height: 1.4;
+  letter-spacing: 1.5px;
+  text-align: start;
+}
+article picture {
+  width: 100%;
+}
+article picture img {
+	width: 100%;
+	height: auto;
+}
+article picture.article img{
+  mix-blend-mode: multiply;
+}
+article .react-love{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: none;
+}
+article .react-love.love{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+article .react-love.love span{
+  font-size: 50px;
+  transition: 5s linear;
+  color: #999;
+  animation: loveAnim 1s linear;
+}
+@keyframes loveAnim {
+  0%{ 
+    transform: scale(1);
+    color: #999;
+  }
+  50%{ 
+    transform: scale(1.5);
+    color: crimson;
+  }
+  100%{ 
+    transform: scale(1);
+    color: #999;
+  }
+}
+article p {
+	line-height: 1.5;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.comment-section{
+  width: 100%;
+  border-top: 3px solid #f2f2f2;
+  padding: 20px 25px;
+}
+.comment-section h3{
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+  position: relative;
+}
+.comment-section form{
+  max-width: max-content;
+  border-radius: 11.5px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.comment-section form .input-box{
+  display: flex;
+  flex-direction: column;
+}
+.comment-section form .input-box label{
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+  display: flex;
+  gap: 8px;
+}
+.comment-section form .input-box input,
+.comment-section form .input-box textarea{
+  outline: none;
+  border: none;
+  padding: 15px 8px;
+  border-radius: 12.3px;
+  font-size: 18px;
+  background: #f2f2f2;
+  border:3px solid transparent;
+}
+.comment-section form .input-box textarea{
+  resize: none;
+}
+.comment-section form .input-box input:focus::placeholder,
+.comment-section form .input-box textarea:focus::placeholder{
+  color: red;
+}
+.comment-section form .input-box button[type=submit],
+.input-box i{
+  width: max-content;
+  text-align: center;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 3px crimson;
+  padding: 3px 8px;
+  border-radius: 11.5px;
+  color: #a59a9a;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+}
+.reaction{
+  padding: 10px;
+  width: 100%;
+}
+.reaction h3{
+  font-size: 22px;
+  font-weight: 900;
+  color: #999;
+}
+.reaction .reactIcon{
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reaction .reactIcon span{
+  font-size: 30px;
+  color: #bd4f65;
+  cursor: pointer;
+  position: relative;
+  transition: .4s linear;
+}
+.reaction .reactIcon:hover span:hover{
+  color: crimson;
+}
+.reaction .reactIcon span.fas.fa-heart{
+  color: crimson;
+}
+.badge{
+ position: absolute;
+ top: 0;
+ right: -8px;
+ font-size: 10px;
+ color: #000;
+ user-select: none;
+}
+.comment-view{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+}
+.comment-view.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment-view .comments{
+  max-height: 90vh;
+  max-width: 600px;
+  width: 100%;
+  background: #a7a5a5;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  border-radius: 12.3px;
+  animation: pop .5s linear;
+  overflow-y: auto;
+  margin-top: 90px;
+}
+.comment-view .comments::-webkit-scrollbar,
+.otherSources .dataReleted::-webkit-scrollbar{
+  width: 10px;
+}
+.comment-view .comments::-webkit-scrollbar-track,
+.otherSources .dataReleted::-webkit-scrollbar-track{
+  background: linear-gradient(120deg,#f05d74,#3daf6a);
+}
+.comment-view .comments::-webkit-scrollbar-thumb,
+.otherSources .dataReleted::-webkit-scrollbar-thumb{
+  background: linear-gradient(357deg,#9f32bf,#b7afa9);
+  border-radius: 12.3px;
+}
+.comment-view .comments .comment-item{
+  max-width: 100%;
+  width: max-content;
+  height: max-content;
+  background: #b05e5e;
+  border-radius: 12.3px;
+  padding: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+@keyframes pop {
+  from{ transform: scale(.5);}
+  to{ transform: scale(1);}
+}
+.comment-view .comments .comment-item img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-drag: none;
+  border: 3px solid #ccc;
+  box-shadow: 0 0 50px #fff;
+}
+.comment-view .comments .comment-item h4{
+  font-size: 18px;
+  font-weight: 900;
+  padding: 3px;
+  letter-spacing: 1.3px;
+}
+.comment-view .comments .comment-item h4,
+.comment-view .comments .comment-item p{
+  text-transform: capitalize;
+}
+.comment-view .comments .comment-item .option{
+  font-size: 22px;
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.comment-view .comments .comment-item .option i{
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1;
+  border-radius: 50%;
+  color: #8d1e1e;
+  transition: .5s linear;
+  background: #999;
+  display: none;
+}
+.comment-view .comments .comment-item .option:hover i{
+  display: block;
+}
+.comment-view .comments .comment-item i:hover{
+  transform: rotate(360deg);
+  background: #999;
+}
+.author-details{
+  position: relative;
+}
+.author-details .about-author{
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  right: 3px;
+  width: 300px;
+  background: #a59a9a;
+  padding: 20px 25px;
+  border-radius: 12.3px;
+}
+.author-details .about-author.active{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: pop .5s linear;
+}
+.author-details .about-author::after{
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #a59a9a;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(45deg);
+  border-top-right-radius: 12.3px;
+}
+.author-details .about-author img{
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  box-shadow: 0 0 70px #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.author-details .about-author .about{
+  width: 100%;
+  height: 100%;
+  border-top: 3px solid #3daf6a;
+}
+.author-details .about-author h3{
+  color: #333;
+  font-size: 18px;
+}
+.author-details .about-author p{
+  padding: 0px 9px;
+  letter-spacing: 1px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.user-social-id {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.user-social-id p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-social-id p a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+  transition: .5s linear;
+  border-radius: 50%;
+  padding: 0 3px;
+}
+
+.user-social-id p a:nth-child(1) {
+  color: #3B5998;
+}
+
+.user-social-id p a:nth-child(1):hover {
+  color: #fff;
+  background-color: #3B5998;
+}
+
+.user-social-id p a:nth-child(2) {
+  color: red;
+}
+
+.user-social-id p a:nth-child(2):hover {
+  color: #fff;
+  background-color: red;
+}
+
+.user-social-id p a:nth-child(4) {
+  color: #bb0000;
+}
+
+.user-social-id p a:nth-child(4):hover {
+  color: #fff;
+  background-color: #bb0000;
+}
+
+.user-social-id p a:nth-child(3) {
+  color: #55ACEE;
+}
+
+.user-social-id p a:nth-child(3):hover {
+  color: #fff;
+  background-color: #55ACEE;
+}
+
+.user-social-id p a:hover {
+  transform: scale(1.2) translateY(.3px);
+}
+
+  .otherSources{
+    padding: 10px 15px;
+    border-radius: 5.3px;
+    background: #ffff;
+    height: max-content;
+  }
+  .otherSources .searchField{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 10px 0px;
+    width: 100%;
+    box-shadow: 1px 1px 4px #000;
+    border-radius: 12.3px;  
+    margin-bottom: 10px;
+  }
+  .otherSources .searchField input,
+  .otherSources .searchField button{
+    border: none;
+    outline: none;
+    padding: 9px;
+    width: 100%;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+  .otherSources .searchField button{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    width: max-content;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    animation: BlinkBtn 1s linear infinite;
+  }
+  @keyframes BlinkBtn {
+    0%{ transform: scale(.94);}
+    50%{ transform: scale(1);
+      box-shadow: 0 0 10px #9ecaed;
+    }
+    100%{ transform: scale(.94);}
+  }
+  .otherSources .dataReleted{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 3px;
+    min-width: 320px;
+    height: max-content;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  .otherSources .dataReleted .card{
+    width: 370px;
+    height: 170px;
+    padding: 5px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255,.1),
+               5px 5px 15px rgba(0, 0, 0,.35),
+               inset -5px -5px 15px rgba(255, 255, 255,.1),
+               inset 5px 5px 15px rgba(0, 0, 0,.35);
+    background: #f5f5f5;
+    border-radius: 3.3px;
+    overflow: hidden;
+    position: relative;
+    transition: .5s linear;
+  }
+  .otherSources .dataReleted .card:hover{
+    box-shadow: 0 0 10px #000;
+  }
+  .otherSources .dataReleted .card .box{
+    display: flex;
+    align-items: center;
+  }
+  .otherSources .dataReleted .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .otherSources .dataReleted .card .description{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(40%);
+    width: 100%;
+    color: #333;
+    z-index: 1;
+    margin-top: 55px;
+    padding: 10px 15px;
+    background: rgb(204, 204, 204,.8);
+    transition: .5s ease;
+  }
+  .otherSources .dataReleted .card:hover .description{
+    transform: translateY(-30%);
+  }
+  .otherSources .dataReleted .card .description h1{
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: start;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .otherSources .dataReleted .card .description p{
+    text-transform: capitalize;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    padding-bottom: 3px;
+    text-align: start;
+  }
+  @media (max-width: 800px) {
+   main{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   }
+   article h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+   }
+   article picture{
+    max-width: 100%;
+    height: 320px;
+  }
+   article picture img{
+    width: 100%;
+    height: 100%;
+  }
+  .heading p{
+    display: none;
+  }
+  .comment-view .comments{
+    max-width: 100%;
+  }
+  .comment-section form{
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .otherSources{
+    width: 99%;
+    padding: 10px;
+  }
+  .otherSources .dataReleted .card{
+    width: 100%;
+  }
+  }  

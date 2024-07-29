@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,100&family=Ubuntu:wght@400;500;700&display=swap");
+.share-icon {
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  z-index: 9;
+  padding: 8px 15px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #b3e5ff;
+  background: #4010b3;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 2px 7px 1px;
+  transition: 0.5s linear;
+  animation: popUp 0.9s linear infinite;
+}
+
+.share-icon:hover {
+  box-shadow: none;
+  background: #b3e5ff;
+  color: #4010b3;
+  animation: none;
+}
+.share-data {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: rgb(119, 119, 119, 0.6);
+  display: none;
+}
+.share-data.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: popUp 0.7s linear;
+}
+.social-share {
+  background: #f2f2f2;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  max-height: 400px;
+  width: 100%;
+  animation: popUp 1s linear;
+}
+@keyframes popUp {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.social-share :is(header, .icons, .copy-field, .share-icon) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-share header {
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 8px;
+}
+.social-share header span {
+  font-size: 21px;
+  font-weight: 700;
+}
+.social-share header .close {
+  background: #f2f2f2;
+  color: #f5bccf;
+  width: 33px;
+  height: 33px;
+  font-size: 25px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.3s linear;
+}
+.social-share header .close:hover {
+  background: #f5bccf;
+  color: #f2f2f2;
+}
+.social-share .main-field {
+  margin: 15px 0;
+}
+.social-share .main-field p {
+  font-size: 16px;
+  font-weight: 600;
+}
+.social-share .main-field .icons {
+  margin: 15px 0 20px 0;
+}
+.social-share .main-field .icons a {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  background: #f2f2f2;
+  text-decoration: none;
+  border: 1px solid transparent;
+  box-shadow: 1px 3px 4px 0px;
+  cursor: pointer;
+}
+.social-share header .close,
+.social-share .main-field .icons a {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-field .icons a:nth-child(1) {
+  color: blue;
+  border-color: #b7d4fb;
+}
+.main-field .icons a:nth-child(1):hover {
+  background: blue;
+  color: white;
+}
+.main-field .icons a:nth-child(2) {
+  color: blue;
+  border-color: #b7d4fb;
+}
+.main-field .icons a:nth-child(2):hover {
+  background: blue;
+  color: white;
+}
+.main-field .icons a:nth-child(3) {
+  color: #25d366;
+  border-color: #bef4d2;
+}
+.main-field .icons a:nth-child(3):hover {
+  background: #25d366;
+  color: white;
+}
+.main-field .icons a:nth-child(4) {
+  color: #46c1f6;
+  border-color: #b6e7fc;
+}
+.main-field .icons a:nth-child(4):hover {
+  background: #46c1f6;
+  color: white;
+}
+.main-field .icons a:nth-child(5) {
+  color: #e1386e;
+  border: #f5bccf;
+}
+.main-field .icons a:nth-child(5):hover {
+  background: #e1386e;
+  color: white;
+}
+.main-field .icons a:nth-child(6) {
+  color: #0088cc;
+  border-color: #b3e5ff;
+}
+.main-field .icons a:nth-child(6):hover {
+  background: #0088cc;
+  color: white;
+}
+.main-field .icons a:nth-child(7) {
+  color: #ff6600;
+  border-color: #e48b4f;
+}
+.main-field .icons a:nth-child(7):hover {
+  background: #ff6600;
+  color: white;
+}
+.main-field .icons a:nth-child(8) {
+  color: #f70434;
+  border-color: #e1386e;
+  background: #fff;
+}
+.main-field .icons a:nth-child(8):hover {
+  background: rgb(131, 15, 15);
+  color: white;
+}
+.icons a i {
+  transition: transform 0.3s ease-in-out;
+}
+.icons a:hover i {
+  transform: scale(1.2);
+}
+.social-share .main-field .copy-field {
+  margin: 5px 0 -1px 0;
+  height: 30px;
+  border: 1px solid rgb(82, 82, 156);
+  border-radius: 5px;
+  padding: 0 2px;
+}
+.main-field .copy-field i {
+  width: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+.main-field .copy-field input {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+}
+.copy-field button {
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: 600;
+  background: rgb(82, 82, 156);
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+}

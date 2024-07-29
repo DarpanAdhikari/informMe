@@ -1,0 +1,29 @@
+.gallery {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+	margin-top: 30px;
+}
+
+.gallery img {
+	width: auto;
+	max-width: 450px;
+	height: 300px;
+	margin: 5px;
+	object-fit: cover;	
+	cursor: pointer;
+	border-radius: 5.5px;
+	box-shadow: 0 0 10px #f3f3f3;
+}
+@media (max-width: 768px) {
+	.gallery{
+		width: 100%;
+	}
+	.gallery img {
+		width: 97%;
+		height: 250px;
+	}
+}

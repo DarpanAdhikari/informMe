@@ -1,0 +1,74 @@
+CREATE TABLE navbar (
+    navId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    page_name varchar(255) DEFAULT 'not set',
+    row int(11) NOT NULL,
+    navigation varchar(200) NOT NULL,
+    pageVisit int(11) DEFAULT 0,
+    about_us text,
+    visitors int(11),
+    facebook varchar(255),
+    youtube varchar(255),
+    twitter varchar(255),
+    pinterest varchar(255),
+    post_qnt int(11),
+    nav_status int(11) DEFAULT 1
+);
+
+CREATE TABLE account (
+    accId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    position varchar(100) DEFAULT 'Content-writer',
+    image varchar(255),
+    bio text,
+    userState int(11) DEFAULT 1,
+    facebook varchar(255),
+    instagram varchar(255),
+    youtube varchar(255),
+    twitter varchar(255),
+    onlineStat int(11)
+);
+
+CREATE TABLE chat (
+    chtId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ch_name varchar(255),
+    message text NOT NULL,
+    fk_accId int(11),
+    date varchar(255),
+    FOREIGN KEY (fk_accId) REFERENCES account(accId)
+);
+
+CREATE TABLE post (
+    pId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(255),
+    slug varchar(255),
+    metaDescription text,
+    keywords text,
+    fk_category int(11),
+    tags text,
+    content text,
+    featureImg varchar(255),
+    postStat int(11),
+    viewer int(11) DEFAULT 0,
+    postDate varchar(255),
+    fk_author int(11),
+    likes int(11) DEFAULT 0,
+    display int(11)
+);
+
+CREATE TABLE comment (
+    cmId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fk_user int(11),
+    commentor varchar(100),
+    comment text,
+    cmtDate varchar(100),
+    fk_postId int(11),
+    FOREIGN KEY (fk_postId) REFERENCES post(pId)
+);
+
+CREATE TABLE postimg (
+    imageId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    url varchar(255),
+    imageUrl varchar(255)
+);
